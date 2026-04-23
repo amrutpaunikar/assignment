@@ -22,17 +22,11 @@ This repo now includes all three assignment variants from `C:\isaacsim\scripts`:
 
 ```text
 assignment/                            <- this repository
-  config.py                            <- legacy/top-level base implementation files
-  robot_session.py
-  objectives.py
-  pipeline.py
+  config.py                            <- base implementation config
+  robot_session.py                     <- base implementation robot/session logic
+  objectives.py                        <- base implementation objectives
+  pipeline.py                          <- base implementation pipeline
   ...
-  ur5_assignment/                      <- base module (same style as other two)
-    config.py
-    robot_session.py
-    objectives.py
-    pipeline.py
-    ...
   copy_of_ur5_assignment/              <- copied variant
     config.py
     robot_session.py
@@ -102,8 +96,11 @@ Each variant generates these files in its own default output folder:
 
 Note for `ur5_assignment_plot_shown`:
 
-
-
 - If a CSV is open/locked (for example in Excel), it writes a timestamped fallback CSV and continues.
 
-Outputs of the assignment present in this Drive link - https://drive.google.com/drive/folders/1Qyv5txH2rYOB0w_4Jk9wTcHvPaeIiHuP?usp=sharing
+## Recorder Note
+
+- These scripts do not auto-record MP4 by default.
+- Record from Isaac Sim GUI Recorder.
+- Current frame capture path on this machine:
+  - `C:\Users\prati\Documents\Kit\shared\screenshots\`
