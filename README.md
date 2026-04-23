@@ -21,16 +21,12 @@ This repo now includes all three assignment variants from `C:\isaacsim\scripts`:
 ## File Structure
 
 ```text
-scripts/
-  isaac_sim_assignment_windows_ur5.py
-  isaac_sim_assignment_windows_ur5_copy.py
-  isaac_sim_assignment_windows_ur5_plot_shown.py
-  ur5_assignment/                      <- base implementation (this repo root)
-    config.py
-    robot_session.py
-    objectives.py
-    pipeline.py
-    ...
+assignment/                            <- this repository
+  config.py                            <- base implementation config
+  robot_session.py                     <- base implementation robot/session logic
+  objectives.py                        <- base implementation objectives
+  pipeline.py                          <- base implementation pipeline
+  ...
   copy_of_ur5_assignment/              <- copied variant
     config.py
     robot_session.py
@@ -44,6 +40,12 @@ scripts/
     pipeline.py
     ...
 ```
+
+Local launcher scripts remain in `C:\isaacsim\scripts`:
+
+- `isaac_sim_assignment_windows_ur5.py`
+- `isaac_sim_assignment_windows_ur5_copy.py`
+- `isaac_sim_assignment_windows_ur5_plot_shown.py`
 
 ## Commands (Without Props)
 
