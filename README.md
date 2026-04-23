@@ -1,55 +1,84 @@
 # assignment
 
-UR5 assignment module for Isaac Sim (modular OOP version).
+UR5-based robotics assignment implementations for Isaac Sim.
 
-## What This Contains
+This repo now includes all three assignment variants from `C:\isaacsim\scripts`:
 
-- UR5 robot session and scene setup
-- Objective 1: workspace reachability
-- Objective 2: continuous IK path generation
-- Objective 3: time-parameterized trajectory + plots
-- CSV/plot export helpers
+- `ur5_assignment` (base modular version)
+- `copy_of_ur5_assignment` (copied variant)
+- `ur5_assignment_plot_shown` (variant with plotted target markers and gripper-touch visualization in Objective 1)
 
-## Required Paths
+## Setup
 
-- UR5 USD is expected at:
-  - `C:\isaacsim\assets\Isaac\5.1\Isaac\Robots\UniversalRobots\ur5\ur5.usd`
-- Optional props are loaded from:
-  - `C:\isaacsim\assets\Isaac\5.1\Isaac\Props\YCB\Axis_Aligned_Physics\`
+1. Use Isaac Sim 5.1 on Windows.
+2. Ensure UR5 USD exists at:
+   - `C:\isaacsim\assets\Isaac\5.1\Isaac\Robots\UniversalRobots\ur5\ur5.usd`
+3. Optional props are read from:
+   - `C:\isaacsim\assets\Isaac\5.1\Isaac\Props\YCB\Axis_Aligned_Physics\`
+4. Run commands from:
+   - `C:\isaacsim`
 
-## Run Commands
+## File Structure
 
-Run from Isaac Sim root:
-
-```powershell
-cd C:\isaacsim
-python.bat scripts\isaac_sim_assignment_windows_ur5.py
+```text
+scripts/
+  isaac_sim_assignment_windows_ur5.py
+  isaac_sim_assignment_windows_ur5_copy.py
+  isaac_sim_assignment_windows_ur5_plot_shown.py
+  ur5_assignment/                      <- base implementation (this repo root)
+    config.py
+    robot_session.py
+    objectives.py
+    pipeline.py
+    ...
+  copy_of_ur5_assignment/              <- copied variant
+    config.py
+    robot_session.py
+    objectives.py
+    pipeline.py
+    ...
+  ur5_assignment_plot_shown/           <- plotted-target visualization variant
+    config.py
+    robot_session.py
+    objectives.py
+    pipeline.py
+    ...
 ```
 
-Headless mode:
+## Commands (Without Props)
+
+Run all commands from `C:\isaacsim`.
+
+Base assignment:
 
 ```powershell
-cd C:\isaacsim
-python.bat scripts\isaac_sim_assignment_windows_ur5.py --headless
-```
-
-Custom output folder:
-
-```powershell
-cd C:\isaacsim
-python.bat scripts\isaac_sim_assignment_windows_ur5.py --out_dir outputs\ur5_assignment_run1
-```
-
-Disable props:
-
-```powershell
-cd C:\isaacsim
 python.bat scripts\isaac_sim_assignment_windows_ur5.py --no_props
 ```
 
-## Expected Outputs
+Copy assignment:
 
-By default, outputs are saved under `outputs\` and include:
+```powershell
+python.bat scripts\isaac_sim_assignment_windows_ur5_copy.py --no_props
+```
+
+Plot-shown assignment:
+
+```powershell
+python.bat scripts\isaac_sim_assignment_windows_ur5_plot_shown.py --no_props
+```
+
+## Default Output Locations
+
+- `ur5_assignment`:
+  - `outputs\ur5_assignment\outputs`
+- `copy_of_ur5_assignment`:
+  - `outputs\copy_of_ur5_assignment\outputs`
+- `ur5_assignment_plot_shown`:
+  - `outputs\ur5_assignment_plot_shown\outputs`
+
+## Output Files (All Three Variants)
+
+Each variant generates these files in its own default output folder:
 
 - `objective1_workspace_reachability.csv`
 - `objective1_reachability_plot.png`
@@ -63,34 +92,13 @@ By default, outputs are saved under `outputs\` and include:
 - `objective3_tcp_speed.png`
 - `objective3_summary.txt`
 
-## Recordings
+Note for `ur5_assignment_plot_shown`:
 
-- This module does not auto-record video.
-- Record from Isaac Sim GUI using Recorder.
-- Your current frame capture path is:
+- If a CSV is open/locked (for example in Excel), it writes a timestamped fallback CSV and continues.
+
+## Recorder Note
+
+- These scripts do not auto-record MP4 by default.
+- Record from Isaac Sim GUI Recorder.
+- Current frame capture path on this machine:
   - `C:\Users\prati\Documents\Kit\shared\screenshots\`
-
-## GitHub Push Commands
-
-If you want to initialize and push this folder to GitHub:
-
-```powershell
-echo "# assignment" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/amrutpaunikar/assignment.git
-git push -u origin main
-```
-
-For this project (recommended, includes all code files):
-
-```powershell
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/amrutpaunikar/assignment.git
-git push -u origin main
-```

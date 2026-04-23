@@ -28,7 +28,7 @@ class AssignmentConfig:
 def parse_assignment_config() -> AssignmentConfig:
     parser = argparse.ArgumentParser(description="Isaac Sim assignment solution on Windows using UR5")
     parser.add_argument("--headless", action="store_true", help="Run without GUI")
-    parser.add_argument("--out_dir", type=str, default="outputs/ur5_assignment/outputs", help="Output folder")
+    parser.add_argument("--out_dir", type=str, default="outputs/copy_of_ur5_assignment/outputs", help="Output folder")
     parser.add_argument("--physics_dt", type=float, default=1.0 / 60.0, help="Physics timestep")
     parser.add_argument("--render_dt", type=float, default=1.0 / 60.0, help="Render timestep")
     parser.add_argument("--settle_steps", type=int, default=12, help="Simulation steps after IK action")
