@@ -22,11 +22,6 @@ This repo now includes all three assignment variants from `C:\isaacsim\scripts`:
 
 ```text
 assignment/                            <- this repository
-  config.py                            <- legacy/top-level base implementation files
-  robot_session.py
-  objectives.py
-  pipeline.py
-  ...
   ur5_assignment/                      <- base module (same style as other two)
     config.py
     robot_session.py
