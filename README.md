@@ -97,13 +97,7 @@ Each variant generates these files in its own default output folder:
 Note for `ur5_assignment_plot_shown`:
 
 
-outputs of the assignment present in this Drive link - https://drive.google.com/drive/folders/1Qyv5txH2rYOB0w_4Jk9wTcHvPaeIiHuP?usp=sharing
 
 - If a CSV is open/locked (for example in Excel), it writes a timestamped fallback CSV and continues.
 
-## Recorder Note
-
-- These scripts do not auto-record MP4 by default.
-- Record from Isaac Sim GUI Recorder.
-- Current frame capture path on this machine:
-  - `C:\Users\prati\Documents\Kit\shared\screenshots\`
+Outputs of the assignment present in this Drive link - https://drive.google.com/drive/folders/1Qyv5txH2rYOB0w_4Jk9wTcHvPaeIiHuP?usp=sharing
